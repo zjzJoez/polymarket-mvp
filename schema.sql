@@ -436,3 +436,10 @@ CREATE TABLE IF NOT EXISTS market_resolutions (
   source_payload_json TEXT NOT NULL,
   FOREIGN KEY (market_id) REFERENCES market_snapshots(market_id)
 );
+
+-- See migration 20260720_v14_smartmoney_state.sql for rationale.
+CREATE TABLE IF NOT EXISTS smartmoney_state (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
